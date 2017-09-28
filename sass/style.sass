@@ -1,0 +1,515 @@
+$font-dancing: 'Dancing Script', cursive
+$font-roboto: 'Roboto Condensed', sans-serif
+$cream: #efe9dd
+$chocolate: #1e100a
+$cols: 12
+$cols-m: 12
+$red: 0
+$green: 0
+$blue: 0
+$alpha: 0
+$alpha-overlay: 0.2
+$alpha-header: 0.9
+$alpha-footer: 0.9
+$red-slogan: 250
+$green-slogan: 250
+$blue-slogan: 250
+$alpha-slogan: 0.4
+
+=dark-background ($color, $font)
+	color: $color
+	font-size: $font
+
+*
+	box-sizing: border-box
+
+body
+	margin: 0
+	font-family: $font-roboto
+
+header
+	+dark-background ($cream, $chocolate)
+	width: 100%
+	height: 16%
+	background-color: rgba($red, $green, $blue, $alpha-header)
+	margin: 0
+	padding: 0
+
+.container
+	margin: 0 auto
+	width: 100%
+	max-width: 1400px
+	position: relative
+
+.logo
+	color: #fff
+	font-family: $font-dancing
+	line-height: 50px
+	font-size: 30px
+	margin: 0
+	padding-left: 20px
+	display: inline-block
+	text-align: center
+	
+.clearfix
+	float: right
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+.clearfix
+	li 
+		display: inline-block
+		margin: 0
+	a 
+		text-decoration: none
+		display: block
+		color: #fff
+		font-size: 16px
+		text-transform: uppercase
+		line-height: 50px
+		padding: 0 20px
+		&:hover
+			background-color: lighten($chocolate, 30)
+			color: $chocolate
+			cursor: pointer
+
+section
+	width: 100%
+	max-width: 1400px
+	margin: 0 auto
+
+.jumbotron
+	background-image: url("https://s3-eu-west-1.amazonaws.com/psd-bootcamp/jumbotron_crop2.jpg")
+	background-repeat: no-repeat
+	height: auto
+	min-height: 100vh
+	width: 100%
+
+.slogan
+	background-color: rgba($red-slogan, $green-slogan, $blue-slogan, $alpha-slogan)
+	border-radius: 10px
+	float: left
+	max-width: 800px
+	letter-spacing: 5px
+	font-family: $font-dancing
+	font-size: 36px
+	color: darken($cream, 10)
+	line-height: 250%
+	padding: 0 180px
+	margin-top: 255px
+
+.motto
+	margin: 0
+	padding: 20px 0
+	font-size: 60px
+	text-shadow: 2px 2px 2px #000
+
+.row:before,
+.row:after
+	content: ""
+	display: table
+	clear: both
+
+[class*="col-"]
+	float: left
+	min-height: 1px 
+	height: 240px
+	overflow: hidden
+	margin-top: 40px
+	margin-bottom: 20px
+
+@for $i from 1 through $cols
+	.col-#{$i}
+		width: (100% / $cols) * $i
+
+section > .container
+	text-align: center
+
+.trait-main
+	min-height: 300px
+
+.trait
+	color: $chocolate
+	text-transform: uppercase
+	font-size: 30px
+	font-weight: 700
+	padding: 0 40px
+	min-height: 60px
+	margin: 25px aut	
+
+.trait-description
+	text-align: center
+	padding: 0 20px
+	font-size: 18px
+	min-height: 80p	
+
+.tile
+	color: $chocolate
+	font-size: 50px
+	margin-top: 50px
+
+.gallery-head 
+	> h2
+		font-family: $font-dancing
+		font-size: 80px
+		text-align: center
+		margin-top: 50px
+		margin-bottom: 10px
+
+	> p
+		font-size: 30px
+		text-align: center
+		margin-bottom: 50px
+
+.gal
+	height: 120px
+	margin: 0
+	padding: 0
+
+.overlay
+	position: relative
+	min-height: 1px
+	height: 120px
+	margin: 0
+	padding: 0
+	&:hover .link
+		background-color: rgba($red, $green, $blue, $alpha-overlay)
+	  
+	.link
+		position: absolute
+		display: inline-block
+		height: 100%
+		width: 100%
+		background-color: #111
+		left: 0
+		top: 0
+		background-color: rgba($red, $green, $blue, $alpha)
+		transition: background-color .5s ease-in-out
+
+.icon-chain
+	display: inline-block
+	top: 40%
+	position: relative
+	font-size: 20px
+	padding: 0 20px
+	text-align: center
+	color: #fff
+	text-decoration: none
+	cursor: pointer
+	visibility: hidden
+	transition: visibility .5s ease-in-out
+
+.icon-search
+	display: inline-block
+	top: 40%
+	position: relative
+	font-size: 20px
+	padding: 0 20px
+	text-align: center
+	color: #fff
+	text-decoration: none
+	cursor: pointer
+	visibility: hidden
+	transition: visibility .5s ease-in-out
+
+.overlay:hover .icon-chain
+	visibility: visible
+
+.overlay:hover .icon-search
+	visibility: visible
+
+.crew
+	height: 450px
+
+.crew 
+	> img
+		margin-top: 50px
+		margin-bottom: 30px
+		min-height: 1px 
+		width: 60%
+		height: auto
+
+.chef
+	color: $chocolate
+	font-size: 30px
+	font-weight: 700
+	padding: 0 40px
+	margin-top: 25px
+
+#cute-picture
+	background-image: url("https://s3-eu-west-1.amazonaws.com/psd-bootcamp/gallery/seigaiha.png")
+	height: 450px
+
+.book-picture 
+	> .col-8 
+		> h2
+			font-family: $font-dancing
+			font-size: 60px
+			text-align: center
+			margin-top: 50px
+			margin-bottom: 10px
+
+.book-picture
+	min-height: 400px
+
+.book-picture 
+	> .col-8
+		height: auto
+
+.book-picture 
+	> .col-8 
+		> p
+			column-count: 2
+			font-size: 20px
+			height: 170px
+			padding: 0 30px
+
+.book-picture 
+	> .col-4
+		height: 340px
+		vertical-align: middle
+
+#open-book
+	margin-top: 50px
+	display: inline-block
+	vertical-align: middle
+
+.number
+	font-family: $font-dancing
+	font-size: 60px
+	color: darken(#93C572, 15)
+	text-align: center
+	margin-top: 50px
+	margin-bottom: 10px
+
+.number-description
+	font-size: 30px
+	font-weight: 700
+
+footer
+	+dark-background ($cream, $chocolate)
+	height: 300px
+	background-color: rgba($red, $green, $blue, $alpha-footer)
+	padding: 0 40px
+
+.col-6
+	margin: 0
+
+.footer-main 
+	> .col-4 
+		> h2
+			text-transform: uppercase
+			letter-spacing: 2px
+			font-size: 30px
+			margin: 0
+			display: inline-block
+
+.footer-main > .col-4
+	position: relative
+
+.solid-line
+	content: ''
+	border: 1px solid $cream
+	display: inline-block
+	min-width: 140px
+	position: absolute
+	top: 14px
+
+.about 
+	> h2
+		&:after
+			@extend .solid-line 
+			left: 150px
+
+.contact-details
+	margin-top: 18px
+
+.contact-details 
+	> h2
+		&:after
+			@extend .solid-line 
+			left: 184px
+			margin-top: 18px
+
+.media 
+	> h2
+		&:after 
+			@extend .solid-line 
+			left: 206px
+
+.footer-main > 
+	.col-4 
+		> p 
+			text-align: justify
+			padding: 5px 40px 5px 0
+			font-size: 20px
+			margin-top: 20px
+
+.contact 
+	line-height: 120%
+	font-size: 20px
+	padding:  5px 0
+	margin: 20px 0
+	padding: 5px 0
+
+
+.contactL 
+	line-height: 120%
+	font-size: 20px
+	width: 150px
+	padding:  5px 0
+	margin: 20px 0
+
+
+.contact-details 
+	> h2 
+		text-transform: uppercase
+		letter-spacing: 2px
+		font-size: 30px
+		margin: 0
+
+
+.icon-btn 
+	width: 20px
+	height: 20px
+	border: none
+	background-color: #fff
+	border-radius: 50%
+	margin: 4px
+	cursor: pointer
+	font-size: 10px
+
+
+.icon-btn:hover 
+	color: #fff
+
+
+.twitter 
+	color: #4099ff
+	&:hover 
+		background-color: #4099ff
+
+.facebook 
+	color: #3b5998
+	&:hover 
+		background-color: #3b5998
+
+.google-plus 
+	color: #db5a3c
+	&:hover 
+		background-color: #db5a3c
+
+.instagram 
+	color: #5c3d2e
+	&:hover 
+		background-color: #5c3d2e
+
+.github 
+	color: #4183c4
+	&:hover 
+		background-color: #4183c4
+
+.copyrights 
+	background-color: #000
+	color: $cream
+	text-align: center
+	letter-spacing: 2px
+	font-size: 18px
+	height: 50px
+	line-height: 50px
+
+
+@media (max-width: 768px) 
+	.slogan 
+		max-width: 350px
+		letter-spacing: 5px
+		font-size: 28px
+		line-height: 250%
+		padding: 0 85px
+		margin-top: 255px
+	
+	.motto 
+		margin: 0
+		padding: 20px 0
+		font-size: 40px
+		text-shadow: 2px 2px 2px #000
+	
+	@for $i from 1 through $cols-m
+		.col-m-#{$i}
+			width: (100% / $cols-m) * $i
+    
+	.trait-main 
+		margin: 10px 0 0
+	
+	.tile 
+		margin-top: 20px
+		font-size: 36px
+  
+	.trait 
+		font-size: 24px
+		min-height: 70px
+	
+	.trait-description 
+		font-size: 12px
+	
+	.gallery-head 
+		> h2 
+			font-size: 40px
+	
+	.gallery-head 
+		> p 
+			font-size: 20px
+
+	.overlay 
+		.link 
+			width: 234px
+			height: 100%
+			left: 267px
+			top: 0
+			visibility: hidden
+	
+	.overlay
+		&:hover .icon-chain
+			visibility: hidden
+
+	.overlay
+		&:hover .icon-search
+			visibility: hidden
+	
+	.crew 
+		> img 
+			margin-top: 30px
+			margin-bottom: 10px
+			width: 30%
+	
+	.crew 
+		height: 280px
+
+	#cute-picture 
+		background-image: url("https://s3-eu-west-1.amazonaws.com/psd-bootcamp/gallery/seigaiha.png")
+		height: 800px
+
+	.book-picture 
+		> .col-8 
+			> h2 
+				font-size: 40px
+	
+	.book-picture 
+		> .col-8 
+			> p 
+				font-size: 14px
+	
+	.number 
+		margin-top: 0
+		font-size: 50px
+	
+	.number-description 
+		font-size: 24px
+	
+	.number-main 
+		height: 140px
+
+	footer 
+		height: 900px
+   
