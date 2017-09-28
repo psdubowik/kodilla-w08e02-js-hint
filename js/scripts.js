@@ -1,4 +1,8 @@
 var name = prompt('Enter your name');
-//Pop up with welcome message and name entered by the user
-alert('Hello, ' + name);
-console.log('Hello, ' + name);
+if (name) {
+    alert('Hello, ' + name);
+    console.log('Hello, ' + name);
+} else {
+    alert('Hello, stranger');
+    console.log('Hello, stranger :-)');
+}
