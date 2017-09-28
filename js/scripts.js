@@ -3,6 +3,6 @@ if (name) {
     alert('Hello, ' + name);
     console.log('Hello, ' + name);
 } else {
-    alert('Hello, stranger');
+    alert('Hello, stranger :-)');
     console.log('Hello, stranger :-)');
 }
